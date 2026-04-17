@@ -60,10 +60,8 @@
 {% endblock %}
 
 {% macro logo_section() %}
-<div class="page-card-head">
-	<img class="app-logo" src= "{{ logo }}" >
-	<h4>{{ _('Login to {0}').format(app_name or _("Frappe")) }}</h4>
-	<p class="login-subtitle">{{ _("Secure ERP & Accounting Workspace") }}</p>
+<div class="page-card-head login-logo-head">
+	<img class="app-logo" src="{{ logo }}" alt="{{ app_name or _('App') }}">
 </div>
 {% endmacro %}
 
@@ -79,14 +77,31 @@
 	</noscript>
 	<section class='for-login'>
 		<div class="login-content page-card login-shell">
-			<div class="login-brand-panel">
-				<h2>{{ _("Shaasie Solutions") }}</h2>
-				<p>{{ _("Professional ERP and accounting operations, built for focus and control.") }}</p>
-				<ul class="brand-points">
-					<li>{{ _("General ledger and financial statements") }}</li>
-					<li>{{ _("Accounts receivable and payable control") }}</li>
-					<li>{{ _("Sales, purchasing, and inventory visibility") }}</li>
-				</ul>
+			<div class="login-brand-panel" aria-hidden="true">
+				<svg class="login-shapes" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+					<defs>
+						<linearGradient id="login-grad-a" x1="0%" y1="0%" x2="100%" y2="100%">
+							<stop offset="0%" stop-color="#e8eef5"/>
+							<stop offset="100%" stop-color="#d4e4f0"/>
+						</linearGradient>
+						<linearGradient id="login-grad-b" x1="0%" y1="100%" x2="100%" y2="0%">
+							<stop offset="0%" stop-color="#c7d9ea"/>
+							<stop offset="100%" stop-color="#a8c4dc"/>
+						</linearGradient>
+						<filter id="login-soft" x="-20%" y="-20%" width="140%" height="140%">
+							<feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+						</filter>
+					</defs>
+					<rect width="400" height="520" fill="url(#login-grad-a)"/>
+					<circle cx="320" cy="80" r="120" fill="url(#login-grad-b)" opacity="0.55" filter="url(#login-soft)"/>
+					<circle cx="60" cy="420" r="100" fill="#b8cfe0" opacity="0.45" filter="url(#login-soft)"/>
+					<rect x="40" y="120" width="140" height="140" rx="28" fill="#ffffff" opacity="0.55" transform="rotate(-8 110 190)"/>
+					<rect x="200" y="260" width="160" height="100" rx="20" fill="#ffffff" opacity="0.4" transform="rotate(6 280 310)"/>
+					<circle cx="200" cy="260" r="44" fill="none" stroke="#7a9ab5" stroke-width="2" opacity="0.5"/>
+					<circle cx="200" cy="260" r="72" fill="none" stroke="#9bb3c9" stroke-width="1.5" opacity="0.35"/>
+					<path d="M 80 360 L 120 320 L 160 350 L 220 280 L 280 340 L 340 300" fill="none" stroke="#8aa8c0" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+					<rect x="260" y="60" width="56" height="56" rx="12" fill="#ffffff" opacity="0.35"/>
+				</svg>
 			</div>
 
 			<div class="login-form-panel">

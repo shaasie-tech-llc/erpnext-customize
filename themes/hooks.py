@@ -10,8 +10,7 @@ app_license = "MIT"
 # Includes in <head>
 # ------------------
 # include js, css files in header of desk.html
-app_include_css = ["themes.bundle.css", "/assets/themes/css/css-rtl/translations_ar_eg.css"]
-app_include_js = ["themes.bundle.js"]
+app_include_css = ["themes.bundle.css"]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/themes/css/themes.css"
@@ -154,10 +153,6 @@ app_include_js = ["themes.bundle.js"]
 # Overriding Methods
 # ------------------------------
 #
-override_whitelisted_methods = {
-	"frappe.core.doctype.user.user.switch_theme": "themes.override.switch_theme"
-}
-#
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
@@ -215,10 +210,6 @@ override_whitelisted_methods = {
 #	"themes.auth.validate"
 # ]
 
-fixtures=[
-        {"dt":("Property Setter"),
-        "filters":[
-                     [ "doc_type","in",("User") ],
-                     [ "field_name" , "in" , ("desk_theme")]
-        ]}
+fixtures = [
+	{"dt": "Print Style", "filters": [["name", "in", ("Custom Style",)]]}
 ]

@@ -1,9 +1,21 @@
-@import "./purple.bundle.css";
-@import "./green.bundle.css";
-@import "./blue.bundle.css";
-@import "./dark-blue.bundle.css";
-@import "./crimson.bundle.css"
-/* .app-logo{
-    min-height: 55px !important;
-    width: auto !important;
-} */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap");
+
+/*
+	Global desk typography override:
+	- Keep this minimal and Frappe-friendly by only applying font family/weight.
+*/
+:root,
+body,
+input,
+button,
+select,
+textarea,
+.form-control,
+.awesomplete > input,
+.modal,
+.widget,
+.page-container,
+.layout-main-section {
+	font-family: "Cairo", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	font-weight: 500;
+}

@@ -32,7 +32,6 @@ def get_context(context):
 			raise frappe.Redirect
 
 	context.no_header = True
-	context.for_test = "login.html"
 	context["title"] = "Login"
 	context["provider_logins"] = []
 	context["disable_signup"] = cint(frappe.get_website_settings("disable_signup"))

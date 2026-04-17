@@ -1,5 +1,2 @@
-import "./theme_switcher";
-
-
-
-// const div1 = document.getElementsByClassName("input-with-feedback") ;
+// Intentionally left blank.
+// Theme switch customization was removed to stay aligned with Frappe defaults.
